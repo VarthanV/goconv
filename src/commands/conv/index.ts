@@ -3,7 +3,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { jsonToGo } from "../../json-to-go";
 
-export default class GoConv extends Command {
+export default class Conv extends Command {
   static description =
     "Converts json from source file to struct and writes it in the destination file";
 
