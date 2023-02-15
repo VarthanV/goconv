@@ -1,5 +1,6 @@
 # goconv
-=================
+
+npm link : npmjs.com/package/goconv
 
 A CLI tool to convert json to Golang structs and write it to a desired file of your choice
 
