@@ -1,6 +1,6 @@
 # goconv
 
-npm link : [npmjs.com/package/goconv](npmjs.com/package/goconv)
+npm link : [https://npmjs.com/package/goconv](https://npmjs.com/package/goconv)
 
 A CLI tool to convert json to Golang structs and write it to a desired file of your choice
 
