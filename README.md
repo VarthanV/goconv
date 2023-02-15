@@ -10,6 +10,18 @@ $ npm install -g goconv
 $ goconv COMMAND
 running command...
 $ goconv (--version)
+goconv/0.0.1 darwin-arm64 node-v17.8.0
+$ goconv --help [COMMAND]
+USAGE
+  $ goconv COMMAND
+...
+```
+<!-- usagestop -->
+```sh-session
+$ npm install -g goconv
+$ goconv COMMAND
+running command...
+$ goconv (--version)
 goconv/0.0.0 darwin-arm64 node-v17.8.0
 $ goconv --help [COMMAND]
 USAGE
@@ -19,4 +31,3 @@ USAGE
 # Demo
 
 ![Demo gif](./demo.gif)
-
