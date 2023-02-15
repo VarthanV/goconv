@@ -1,6 +1,6 @@
 {
   "name": "goconv",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A CLI tool to convert json to Golang structs and write it to a desired file of your choice",
   "author": "Vishnu Varthan @VarthanV",
   "bin": {
@@ -59,7 +59,8 @@
     "posttest": "yarn lint",
     "prepack": "yarn build && oclif manifest && oclif readme",
     "test": "mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif readme && git add README.md"
+    "version": "oclif readme && git add README.md",
+    "start":"npm run build && bin/run"
   },
   "engines": {
     "node": ">=12.0.0"
