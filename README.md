@@ -8,9 +8,11 @@ A CLI tool to convert json to Golang structs and write it to a desired file of y
 <!-- usage -->
 ```sh-session
 $ npm install -g goconv
+
 USAGE
   $ goconv conv
-...
+
+```
 
 
 # Demo
