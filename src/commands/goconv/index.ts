@@ -1,4 +1,4 @@
-import { Command, Flags } from "@oclif/core";
+import { Command, ux } from "@oclif/core";
 import * as fs from "fs";
 import * as path from "path";
 import { jsonToGo } from "../../json-to-go";
@@ -7,52 +7,54 @@ export default class GoConv extends Command {
   static description =
     "Converts json from source file to struct and writes it in the destination file";
 
-  static examples = [
-    `
-    $ goconv --from ./foo.json --to ./foo/bar.go --name 'StructName' --comment 'Test struct'
-    `,
-  ];
-
-  static flags = {
-    from: Flags.string({
-      char: "f",
-      description: "File path of the json for which the struct is required",
-      required: true,
-    }),
-    to: Flags.string({
-      char: "t",
-      description: "File path of the converted struct to be written",
-      required: true,
-    }),
-    name: Flags.string({
-      char: "n",
-      description: "Name of the parent struct",
-    }),
-    comment: Flags.string({
-      char: "c",
-      description: "Comment to write for the parent struct",
-    }),
-  };
+  private _errJSONPathIsRequired = "JSON path is required";
+  private _errDestinationFilePathIsrequired =
+    "Destination file path is required";
 
   async run(): Promise<void> {
-    const { flags } = await this.parse(GoConv);
-    // Resolve path
-    const resolvedPath = path.resolve(flags.from);
-    const buffer = fs.readFileSync(resolvedPath);
+    const from = await ux.prompt("JSON path");
+    const to = await ux.prompt("Go File path");
+    const packageName = await ux.prompt("Package name");
+    const name = await ux.prompt("Name of the Parent Struct", {
+      required: false,
+    });
+    const comment = await ux.prompt("Comment to add in the struct", {
+      required: false,
+    });
+
+    if (!from) {
+      console.error(this._errJSONPathIsRequired);
+      process.exit(1);
+    }
+
+    if (!to) {
+      console.error(this._errDestinationFilePathIsrequired);
+      process.exit(1);
+    }
+
+    const fullFromPath = path.resolve(from);
+    let fullToPath = path.resolve(to);
+
+    const buffer = fs.readFileSync(fullFromPath);
     // Convert json to struct
     const { go, error } = jsonToGo(
       buffer.toString(),
-      flags.name,
+      name,
       true,
       false,
       false,
-      flags.comment
+      comment,
+      packageName.toLowerCase()
     );
     if (error) {
       console.error(error);
       process.exit(1);
     }
     // Write to dest
-    fs.writeFileSync(path.resolve(flags.to),go);
+    if (!to.includes(".go")) {
+      fullToPath += ".go";
+    }
+    fs.writeFileSync(fullToPath, go);
+    console.log(`Struct written succesfully 🚀 to  ${fullToPath}`);
   }
 }
