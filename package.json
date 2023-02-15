@@ -1,10 +1,10 @@
 {
   "name": "goconv",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A CLI tool to convert json to Golang structs and write it to a desired file of your choice",
   "author": "Vishnu Varthan @VarthanV",
   "bin": {
-    "goconv": "./bin/run conv"
+    "goconv": "./bin/run"
   },
   "homepage": "https://github.com/VarthanV/goconv",
   "license": "MIT",
@@ -67,7 +67,11 @@
   },
   "bugs": "https://github.com/VarthanV/goconv/issues",
   "keywords": [
-    "oclif"
+    "oclif",
+    "go",
+    "convertor",
+    "json",
+    "struct"
   ],
   "types": "dist/index.d.ts"
 }

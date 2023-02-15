@@ -11,7 +11,7 @@ $ npm install -g goconv
 $ goconv COMMAND
 running command...
 $ goconv (--version)
-goconv/0.1.0 darwin-arm64 node-v17.8.0
+goconv/0.1.2 darwin-arm64 node-v17.8.0
 $ goconv --help [COMMAND]
 USAGE
   $ goconv COMMAND
