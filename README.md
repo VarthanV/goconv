@@ -328,6 +328,3 @@ DESCRIPTION
 ```
 <!-- commandsstop -->
 
-# Demo
-
-![Demo gif](./demo.gif)
