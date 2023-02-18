@@ -11,7 +11,7 @@ $ npm install -g goconv
 $ goconv COMMAND
 running command...
 $ goconv (--version)
-goconv/1.0.0 linux-x64 node-v18.12.1
+goconv/1.1.0 darwin-arm64 node-v17.8.0
 $ goconv --help [COMMAND]
 USAGE
   $ goconv COMMAND
@@ -72,7 +72,7 @@ FLAG DESCRIPTIONS
     Parent struct name
 ```
 
-_See code: [dist/commands/conv/index.ts](https://github.com/VarthanV/goconv/blob/v1.0.0/dist/commands/conv/index.ts)_
+_See code: [dist/commands/conv/index.ts](https://github.com/VarthanV/goconv/blob/v1.1.0/dist/commands/conv/index.ts)_
 
 ## `goconv help [COMMANDS]`
 
@@ -92,7 +92,7 @@ DESCRIPTION
   Display help for goconv.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.4/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v5.2.2/src/commands/help.ts)_
 
 ## `goconv plugins`
 
@@ -112,7 +112,7 @@ EXAMPLES
   $ goconv plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.3.2/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v2.3.0/src/commands/plugins/index.ts)_
 
 ## `goconv plugins:install PLUGIN...`
 
@@ -327,4 +327,3 @@ DESCRIPTION
   Update installed plugins.
 ```
 <!-- commandsstop -->
-
